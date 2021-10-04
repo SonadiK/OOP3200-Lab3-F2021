@@ -99,3 +99,24 @@ void ExtendedWorkTicket::CloseTicket()
 {
 	m_IsOpen = false;
 }
+
+// Defining the output << operator.
+std::ostream& operator<<(std::ostream& out, const ExtendedWorkTicket& ticket)
+{
+	//Call the base version of ostream (output operator)
+	out << (WorkTicket)ticket;
+	//Check IsOpen is true or false
+	if (ticket.getIsOpen() == true)
+	{
+		//If IsOpen is true
+		std::cout << "Is the ticket open?" << " True";
+		std::cout << std::endl;
+	}
+	else
+	{
+		//If IsOpen is false
+		std::cout << "Is the ticket open?" << " False";
+		std::cout << std::endl;
+	}
+	return out;
+}

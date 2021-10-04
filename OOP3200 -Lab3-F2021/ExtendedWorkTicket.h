@@ -25,9 +25,14 @@ public:
 
 	//Mutator - CloseTicket()
 	void CloseTicket();
+
+	//Overload the << operator 
+	friend std::ostream& operator<<(std::ostream& out, const ExtendedWorkTicket& ticket);
 private:
 	//Member variables
 	bool m_IsOpen;
 };
+
+
 
 #endif
