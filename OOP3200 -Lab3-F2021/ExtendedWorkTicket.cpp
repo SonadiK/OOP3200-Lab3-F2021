@@ -28,3 +28,48 @@ void ExtendedWorkTicket::setIsOpen(const bool value)
 {
 	m_IsOpen = true;
 }
+
+//Definition 
+bool ExtendedWorkTicket::SetWorkTicket(int ticket_number, std::string client_id, int day, int month, int year,
+	std::string description, bool is_open)
+{
+	//MyDate workingDate;
+	const auto min_year = 2000;
+	const auto max_year = 2099;
+	auto valid = true; // flag for if parameters are valid
+	//
+	// check numeric parameters
+	if (ticket_number < 0 || year < min_year || year > max_year)
+		valid = false;
+	// check string parameters     
+	else if (client_id.length() < 1 || description.length() < 1)
+		valid = false;
+	else
+	{
+		try
+		{
+			// sets the date (may throw an exception even if rules are met)
+			SetDate(day, month, year);
+		}
+		catch (...)
+		{
+			valid = false;
+		}
+	}
+
+	if (valid) // all parameters are valid
+	{
+		// set the workticket date         
+		SetDate(day, month, year);
+
+		// set atributes to parameter values
+		SetTicket(ticket_number);
+		SetClient(client_id);
+		SetDescription(description);
+		setIsOpen(true);
+
+	}
+	// return true or false based on parameter validity
+	return valid;
+}
+
