@@ -22,6 +22,9 @@ public:
 
 	//Override ShowWorkTicket()
 	std::string ShowWorkTicket() override;
+
+	//Mutator - CloseTicket()
+	void CloseTicket();
 private:
 	//Member variables
 	bool m_IsOpen;

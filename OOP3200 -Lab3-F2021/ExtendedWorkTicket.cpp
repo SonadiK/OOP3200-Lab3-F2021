@@ -93,3 +93,9 @@ std::string ExtendedWorkTicket::ShowWorkTicket()
 	}
 	return {};
 }
+
+//Defining CloseTicket() mutator
+void ExtendedWorkTicket::CloseTicket()
+{
+	m_IsOpen = false;
+}
