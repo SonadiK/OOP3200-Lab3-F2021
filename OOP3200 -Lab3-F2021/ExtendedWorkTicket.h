@@ -7,6 +7,9 @@
 class ExtendedWorkTicket : public WorkTicket
 {
 public:
+	
+
+	bool getIsOpen() const;
 
 private:
 	
