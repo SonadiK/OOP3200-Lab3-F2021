@@ -73,3 +73,23 @@ bool ExtendedWorkTicket::SetWorkTicket(int ticket_number, std::string client_id,
 	return valid;
 }
 
+// Definition of ShowWorkTicket
+std::string ExtendedWorkTicket::ShowWorkTicket()
+{
+	//Call base class version of ShowWorkTicket()
+	std::cout << WorkTicket::ShowWorkTicket();
+	//Check IsOpen is true or false
+	if (getIsOpen() == true)
+	{
+		//If IsOpen is true
+		std::cout << "Is the ticket open?" << " True";
+		std::cout << std::endl;
+	}
+	else
+	{
+		//If IsOpen is false
+		std::cout << "Is the ticket open?" << " False";
+		std::cout << std::endl;
+	}
+	return {};
+}

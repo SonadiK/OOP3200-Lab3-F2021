@@ -20,6 +20,8 @@ public:
 	//Overload SetWorkTicket()
 	bool SetWorkTicket(int ticket_number, std::string client_id, int day, int month, int year, std::string description, bool is_open = true);
 
+	//Override ShowWorkTicket()
+	std::string ShowWorkTicket() override;
 private:
 	//Member variables
 	bool m_IsOpen;
